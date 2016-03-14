@@ -78,4 +78,27 @@ public class MiHashSet
     public int size(){
         return arrayHashSet.length;
     }
+    
+    /**
+     * elimina del conjunto el elemento dado. Si no existiera devuelve falso; 
+     * si existía en el conjunto devuelve verdadero
+     */
+    public boolean remove(int elemento)
+    {
+        int eliminado = -1;
+        boolean encontrado = false;
+        if (elemento < arrayHashSet.length && elemento >= 0){
+            int[] array2 = arrayHashSet;
+            arrayHashSet = new int[arrayHashSet.length -1];
+            for (int i = 0; i < elemento; i++) {
+                arrayHashSet[i] = array2[i];
+            }
+            for (int i = elemento; i < arrayHashSet.length; i++) {
+                arrayHashSet[i] = array2[i + 1];
+            }
+            eliminado = array2[elemento];
+            encontrado = true;
+        }
+        return encontrado;
+    }
 }
