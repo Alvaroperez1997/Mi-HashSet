@@ -20,7 +20,7 @@ public class MiHashSet
     }
 
     /**
-     * 
+     * Añade un elemento al HashSet
      */
     public boolean add(int valor)
     {
@@ -40,5 +40,26 @@ public class MiHashSet
             arrayHashSet[array2.length] = valor;
         }
         return elemento;
+    }
+    
+    /**
+     * Limpia el conjunto
+     */
+    public void clear(){
+        arrayHashSet = new int[0];
+    }
+    
+    /**
+     * devuelve verdadero si el conjunto contiene el elemento, 
+     * falso en caso contrario
+     */
+    public boolean contains(int elemento){
+        boolean encontrado = false;
+        for (int count = 0; count < arrayHashSet.length && !encontrado; count++){
+            if (elemento == arrayHashSet[count]){
+                encontrado = true;
+            }
+        }
+        return encontrado;
     }
 }
