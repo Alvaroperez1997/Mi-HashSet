@@ -62,4 +62,20 @@ public class MiHashSet
         }
         return encontrado;
     }
+    
+    /**
+     * Devuelve true si el conunto esta vacio
+     * sino devuelve false
+     */
+    public boolean isEmpty()
+    {
+        return(arrayHashSet.length == 0);
+    }
+    
+    /**
+     * devuelve el número de elementos del conjunto.
+     */
+    public int size(){
+        return arrayHashSet.length;
+    }
 }
